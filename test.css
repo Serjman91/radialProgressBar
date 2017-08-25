@@ -1,0 +1,233 @@
+*{
+	box-sizing: border-box;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+html, body, h1, h2, h3, h4, h5, h6 
+{ 
+	font-family: 'Roboto', sans-serif;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    overflow-y:hidden;
+}
+.clearfix:after{
+	content: "";
+	display: table;
+    clear: both;
+}
+header, .container{
+	max-width: 1360px;
+	margin: 0 auto; 
+}
+header{
+	padding: 25px 0;
+}
+header img{
+	float: left;
+	max-width: 150px;
+	cursor: pointer;
+}
+.menu{
+	float: right;
+}
+.menu-dropdown{
+    display: none;
+    float: right;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+}
+.drop{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    padding: 5px;
+}
+.drop li{
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.menu ul, .drop{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-transform: uppercase;
+	display: inline-block;
+}
+.menu ul li{
+	display: inline-block;
+	padding: 10px;
+	cursor: pointer;
+}
+.menu ul li:hover .drop li:hover{
+	color: #3349d6;
+	border-bottom: 2px solid #3349d6;
+}
+.container{
+	position: relative;
+	height: 85vh;
+	background: url("images/background.jpg") 0% 20% no-repeat,
+	url("images/background2.jpg") 100% 100% no-repeat;
+	background-size: 35%, 35%; 
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.big-circle, .small-circle, .play-circle{
+    box-shadow: -1px 1px 33px -8px rgba(0,0,0,0.79);
+}
+.big-circle{
+    overflow: auto;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	max-width: 780px;
+	max-height: 780px;
+	width: 780px;
+	height: 780px;
+	border-radius: 50%;
+  	background-color: #fff;
+}
+.slow-circle{
+    position: absolute;
+    max-width: 730px;
+    max-height: 730px;
+    width: 730px;
+    height: 730px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid;
+    border-color:  #4C00B0;
+    border-top: transparent;
+    border-bottom: transparent;
+    border-left: transparent;
+    animation: rota 10s linear infinite;
+}
+.fast-circle, .fast-circle1{
+    position: absolute;
+    max-width: 680px;
+    max-height: 680px;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #CF0FFF;
+    animation: rota 3s infinite ease-in;
+}
+.fast-circle{
+    border-top: transparent;
+    border-bottom: transparent;
+    border-left: transparent;
+}
+.fast-circle1{
+    border-top: transparent;
+    border-bottom: transparent;
+    border-right: transparent;
+}
+.small-circle{
+    position: absolute;
+    padding: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 100;
+}
+.play-circle{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height:120px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 40px;
+    right: 300px;
+    background-image: linear-gradient(to left, #CF0FFF 0%, #4C00B0 100%);
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 45px solid #fff;
+    border-bottom: 25px solid transparent;
+}
+.text, .text1{
+    z-index: 1;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-transform: uppercase;
+    text-align: center;
+}
+.text1{
+    display: none;
+}
+.text p, .text1 p{
+    text-transform: none;
+    font-size: 1.7em;
+    color: rgba(0,0,0,0.7);
+}
+.text h1, .text h2, .text h3,.text1 h1, .text1 h2, .text1 h3{
+    font-weight: bolder;
+}
+.text h1, .text1 h1{
+    font-size: 3em;
+}
+.text h2, .text1 h2{
+    font-size: 2em;
+}
+.text h3, .text1 h3{
+    font-size: 1em;
+}
+svg{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left: 50%;
+    z-index: 10;
+    width: 125%;
+}
+@keyframes rota {
+
+0%   { transform: rotate(0deg); }
+
+100% { transform: rotate(360deg); }
+
+}
+@media screen and (max-width: 1335px) {
+    .slow-circle, .fast-circle, .fast-circle1, .big-circle, .play-circle {
+        display: none;
+    }
+
+}
+@media screen and (max-width: 648px) {
+    .small-circle{
+        width: 350px;
+        height: 350px;
+    }
+    .small-circle img{
+      display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .menu-dropdown{
+        display: block;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 420px) {
+    .small-circle{
+        width: 250px;
+        height: 250px;
+    }
+    x
+    .text, .text1{
+        font-size: 0.4em;
+    }
+}
